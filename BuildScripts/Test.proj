@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   
   <PropertyGroup>
-    <OutputPath>$(Build.SourcesDirectory)\Deployment</OutputPath>
+    <OutputPath>$(BuildRoot)\Deployment</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

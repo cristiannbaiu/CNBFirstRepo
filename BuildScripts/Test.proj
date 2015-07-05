@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  
+  <PropertyGroup>
+    <OutputPath>$(Build.SourcesDirectory)\Deployment</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Copy Include="$(Build.SourcesDirectory)\Sources\HelloWorld\Release\*.exe"/>
+  </ItemGroup>
+
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build"/>
+  <Target Name="Clean" DependsOnTargets="CleanCopy"/>
+  <Target Name="Build" DependsOnTargets="Copy"/>
+
+  <Target Name="CleanCopy">
+    <Delete Files="@(Copy -> '$(OutputPath)%(Filename)%(Extension)')"/>
+  </Target>
+
+  <Target Name="Copy" Inputs="@(Copy)" Outputs="@(Copy -> '$(OutputPath)\%(Filename)%(Extension)')">
+    <Copy SourceFiles="@(Copy)" DestinationFiles="@(Copy -> '$(OutputPath)\%(Filename)%(Extension)')"/>
+  </Target>
+
+</Project>
+
+

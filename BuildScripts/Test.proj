@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Copy Include="$(Build.SourcesDirectory)\Sources\HelloWorld\Release\*.exe"/>
+    <Copy Include="$(BuildRoot)\Sources\HelloWorld\Release\*.exe"/>
   </ItemGroup>
 
   <Target Name="Rebuild" DependsOnTargets="Clean;Build"/>

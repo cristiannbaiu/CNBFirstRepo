@@ -6,7 +6,7 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	puts("Hello World");
+	puts("Hello Oana");
 
 	getchar();
 
